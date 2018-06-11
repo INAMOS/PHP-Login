@@ -41,7 +41,6 @@ class UserDAO extends Connection{
                 return true;
             }
 
-           
         }
 
         return false;

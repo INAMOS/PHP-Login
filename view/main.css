@@ -1,0 +1,55 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+header{
+    background:rgb(35,33,35);
+    padding: 20px 0;
+}
+
+
+ul{
+    margin: 0;
+}
+
+ul li{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.PHP{
+    width: 80%;
+    margin:20px auto;
+    padding: 60px;
+    background: gainsboro;
+    
+}
+
+.PHP button{
+    background: rgb(76, 147, 240);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.PHP form input[type="submit"]{
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background: rgb(7, 139, 7);
+    padding: 5px
+}
+
+.PHP form input[type="text"],input[type="password"]{
+    padding: 5px;
+    border: none;
+    border-radius: 5px
+}
