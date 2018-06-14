@@ -2,7 +2,7 @@
 <?php include 'partials/menu.php'; ?>
     
 <div class="PHP">
-
+    <h1>Login</h1>
     <form id="loginForm" action="ValidateCode.php" method="POST">
         <label for="">User</label>
         <input type="text" name="txtuser" required>

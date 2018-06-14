@@ -47,6 +47,43 @@ class UserDAO extends Connection{
 
     }
 
+
+    /**
+     * 
+     * 
+     * method that is used to obtain a user
+     * 
+     * @param object $user
+     * @return boolean
+     */
+    public static function getUser($user){
+
+        $query="SELECT id,name,email,privilege,register_date FROM users WHERE user=:user AND password=:password";
+
+        self::getConnection();
+
+        $result=self::$cnx->prepare($query);
+
+        @$result->bindParam(":user",$user->getUser());
+        @$result->bindParam(":password",$user->getPassword());
+
+        $result->execute();
+
+        $rows=$result->fetch();
+
+        $user=new User();
+
+        $user->setId($rows["id"]);
+        $user->setName($rows["name"]);
+        $user->setEmail($rows["email"]);
+        $user->setPrivilege($rows["privilege"]);
+
+
+        return $user;
+
+    }
+
+
 }
 
 ?>

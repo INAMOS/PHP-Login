@@ -2,12 +2,13 @@
 <?php include 'partials/menu.php'; ?>
     
 <div class="PHP ">
-    <h1>Login con php!</h1>
+    <h1>Login with php!</h1>
 
-    <button>Login</button>
+    <button onclick="location.href='login.php'">Login</button>
 </div>    
 
 <?php
+
     include 'partials/footer.php';  
 ?>
     

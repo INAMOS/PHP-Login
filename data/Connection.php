@@ -21,6 +21,6 @@ class Connection{
     }
 }
 
-Connection::connect();
+//Connection::connect();
 
 ?>
