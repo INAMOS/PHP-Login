@@ -42,12 +42,12 @@ class User{
 		$this->password = $password;
 	}
 
-	public function getPrivilegio(){
-		return $this->privilegio;
+	public function getPrivilege(){
+		return $this->privilege;
 	}
 
-	public function setPrivilegio($privilegio){
-		$this->privilegio = $privilegio;
+	public function setPrivilege($privilege){
+		$this->privilege = $privilege;
 	}
 
 
@@ -56,7 +56,7 @@ class User{
     private $user;
     private $email;
     private $password;
-    private $privilegio;
+    private $privilege;
 }
 
 ?>

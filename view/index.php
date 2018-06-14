@@ -3,8 +3,11 @@
     
 <div class="PHP ">
     <h1>Login with php!</h1>
-
-    <button onclick="location.href='login.php'">Login</button>
+    <?php if(isset($_SESSION["user"])){ ?>
+        <button onclick="location.href='close-session.php'">Exit</button>
+    <?php }else{ ?>
+        <button onclick="location.href='login.php'">Login</button>
+    <?php } ?>
 </div>    
 
 <?php

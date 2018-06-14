@@ -3,18 +3,21 @@ include '../controller/UserController.php';
 include '../helps/helps.php';
 
 session_start();
-header("content-type:application/json");
-
-$result=array();
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
-    if(isset($_POST["txtuser"]) && isset($_POST["txtpassword"])){
+    if(
+       isset($_POST["txtuser"]) && isset($_POST["txtpassword"]) && 
+       isset($_POST["txtemail"]) && isset($_POST["txtname"])
+    ){
 
         $user=validateValue($_POST["txtuser"]);
         $password=validateValue($_POST["txtpassword"]);
-
-        if(UserController::login($user,$password)){
+        $email=validateValue($_POST["txtemail"]);
+        $name=validateValue($_POST["txtname"]);
+        $privilege=2;
+        
+        if(UserController::register($user,$password,$email,$name,$privilege)){
 
             $user=UserController::getUser($user,$password);
             
@@ -26,16 +29,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 "privilege"=>$user->getPrivilege()
             );
 
-            $result=array("state"=>"true");
-
-            return print(json_encode($result));
+            header("location:admin.php");
 
         }
     }
 
+}else{
+    
+    header("location:register.php?error=1");
 }
 
-$result=array("state"=>"false");
-return print(json_encode($result))
 
 ?>

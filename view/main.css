@@ -48,8 +48,9 @@ a{
     padding: 5px
 }
 
-.PHP form input[type="text"],input[type="password"]{
+.PHP form input[type="text"],input[type="password"],input[type="email"]{
     padding: 5px;
     border: none;
     border-radius: 5px
 }
+

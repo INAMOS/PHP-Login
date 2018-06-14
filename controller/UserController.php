@@ -28,6 +28,20 @@ class UserController{
         return UserDAO::getUser($obj_user);
     }
 
+    public function register($user,$password,$email,$name,$privilege){
+        
+        $obj_user=new User();
+
+        $obj_user->setUser($user);
+        $obj_user->setPassword($password);
+        $obj_user->setEmail($email);
+        $obj_user->setName($name);
+        $obj_user->setPrivilege($privilege);
+        
+
+        return UserDAO::register($obj_user);
+    }
+
 }
 
 ?>

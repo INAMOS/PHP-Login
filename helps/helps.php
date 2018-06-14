@@ -14,7 +14,7 @@ function validateValue($value){
     $value=stripslashes($value);
     $value=htmlspecialchars($value);
 
-    return $campo;
+    return $value;
 }
 
 

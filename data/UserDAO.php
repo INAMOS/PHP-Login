@@ -83,6 +83,39 @@ class UserDAO extends Connection{
 
     }
 
+    /**
+     * 
+     * method that is used to register a user
+     * 
+     * @param object $user
+     * @return boolean
+     */
+
+    public static function register($user){
+
+        $query="INSERT INTO users (name,user,email,password,privilege) VALUES (:name,:user,:email,:password,:privilege)";
+
+        self::getConnection();
+
+        $result=self::$cnx->prepare($query);
+
+        @$result->bindParam(":name",$user->getName());
+        @$result->bindParam(":user",$user->getUser());
+        @$result->bindParam(":email",$user->getEmail());
+        @$result->bindParam(":password",$user->getPassword());
+        @$result->bindParam(":privilege",$user->getPrivilege());
+       
+
+        if($result->execute()){
+            return true;
+        }
+
+        return false;
+
+    }
+
+
+
 
 }
 
